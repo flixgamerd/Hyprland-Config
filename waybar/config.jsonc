@@ -1,0 +1,128 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "width": 1800,
+    "margin-top": 7,
+    "spacing": 0,
+
+    "modules-left": [
+         "custom/power",
+         "hyprland/workspaces",
+          "tray",
+       "mpris"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+        "temperature"
+    ],
+
+      "hyprland/workspaces": {
+        "format": "{icon}",
+        "icon-size": 10,
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "empty": "・"
+        },
+        "persistent-workspaces": {
+            "1": [], "2": [], "3": [], "4": [], "5": []
+        },
+        "on-click": "hyprctl dispatch workspace {name}"
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+   },
+
+    "clock": { 
+     "timezone": "Africa/Luanda",
+     "format": " {:%H:%M}",
+     "format-alt": "{:%A, %d %b %Y — %H:%M:%S}",
+     "interval": 10
+},
+    
+     "mpris": {
+    "player": "spotify",
+    "format": "{status_icon} {title} - {artist}",
+    "format-paused": "{player_icon} {status_icon}",
+    "format-stopped": "",
+    "player-icons": {
+        "default": "▶",
+        "spotify": ""
+    },
+    "status-icons": {
+        "paused": "⏸",
+        "playing": "▶",
+        "stopped": "■"
+    },
+     "ignored-players": ["zen-browser"],
+     "max-length": 25,
+     "interval": 1,
+     "on-click": "playerctl -p spotify play-pause ",
+     "on-click-right": "playerctl -p spotify next",
+     "on-scroll-up": "playerctl -p spotify previous",
+      "on-scroll-down": "playerctl -p spotify next",
+      "tooltip-format": "{title} - {artist} Album: {album}"
+},
+
+
+    "cpu": {
+        "format": " {usage}%",
+        
+        "on-click": "kitty --class btop_float -e btop"
+    },
+    "memory": {
+        "format": " {}%",
+        "on-click": "kitty --class btop_float -e btop"
+    },
+    "temperature": {
+               "critical-threshold": 80,
+       
+        "format-icons": [""],
+        "format": " {temperatureC}°C {icon}"
+    },
+
+    "network": {
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰤮",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "tooltip-format": "{essid} - {signalStrength}%"
+},
+    "pulseaudio": {
+              "format": "{icon}",
+	   "format-icons": ["", "", " "],
+        "format-bluetooth": "",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": "{icon} {text}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" 
+    },
+    "custom/power": {
+        "format" : " 󰣇 ",
+		"tooltip": false
+
+		}
+    
+}
