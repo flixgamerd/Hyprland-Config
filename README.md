@@ -22,4 +22,4 @@ Se você é um colega de laboratório promissor, sabe o que fazer. Se for um hab
 
 1. **Clone esta anomalia:**
    ```bash
-   git clone [https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git](https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git) ~/dotfiles
+   git clone [https://github.com/flixgamerd/Hyprland-Config.git](https://github.com/flixgamerd/Hyprland-Config) ~/dotfiles
