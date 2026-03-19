@@ -12,7 +12,6 @@ Bem-vindo ao meu repositório de configurações. Aqui jaz a prova de que a paci
 | **Hyprland** | Onde a física das janelas acontece. Sem lag, apenas lógica pura. | 10.000.000.000% |
 | **Waybar** | Uma barra de status tão limpa que faria um microscópio parecer sujo. | Absurdo |
 | **Neovim** | Onde o backend ganha vida via Lua. Se você usa VS Code, sinto muito pela sua alma primitiva. | Vital |
-| **Arch Linux** | O sistema operacional. Se você usa Windows, por favor, retire-se do laboratório. | Estável |
 |**Rofi**|   O menu de execução. Se você clica em ícones com o mouse, você ainda está na Idade da Pedra.| Estável|
 
 
