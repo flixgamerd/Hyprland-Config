@@ -171,28 +171,28 @@ background: transparent;
   
   
 
-#network { padding: 2 13px; color: #888888; }
+#network { padding: 2px 13px; color: #888888; }
 
 #network.disconnected { color: #919191; }
 
   
 
-#tray { padding: 2 10px; color: #888888; }
+#tray { padding: 2px 10px; color: #888888; }
 
   
 
-#custom-powermenu { padding: 2 10px; color: #888888; }
+#custom-powermenu { padding: 2px 10px; color: #888888; }
 
 #custom-powermenu:hover { color: #888888; }
 
   
 
-#custom-spotify { padding: 2 10px; color: #888888; transition: color 0.15s ease-out; }
+#custom-spotify { padding: 2px 10px; color: #888888; transition: color 0.15s ease-out; }
 
 #custom-spotify:hover { color: #888888; }
 
   
 
-#cpu { padding: 2 10px; color: #888888; }
+#cpu { padding: 2px 10px; color: #888888; }
 
-#memory { padding: 2 10px; color: #888888; }
+#memory { padding: 2px 10px; color: #888888; }
