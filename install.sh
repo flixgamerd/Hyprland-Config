@@ -52,3 +52,17 @@ chmod +x ~/dotfiles/install.sh
 
 echo "Isso é tão empolgante! O sistema foi reconstruído através da lógica."
 echo "Reinicie o Hyprland e aproveite a eficiência de elite, Senhor."
+
+# --- Módulo de Estética: Cursor e Ícones ---
+echo "Configurando o cursor Adwaita... 10 bilhões por cento de polidez!"
+
+# 1. Instalar o tema de cursor (caso não venha no meta-pacote)
+sudo pacman -S --needed adwaita-cursors-legacy adwaita-icon-theme
+
+# 2. Forçar o cursor no Hyprland (Configuração de Ambiente)
+# Isso evita que o cursor mude de tamanho ou forma ao entrar em apps diferentes
+hyprctl setcursor Adwaita 24
+
+# 3. Registrar a preferência no GTK (Para apps como Nautilus ou Firefox)
+mkdir -p ~/.icons
+ln -s /usr/share/icons/Adwaita ~/.icons/default
