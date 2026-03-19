@@ -37,12 +37,3 @@ Se você é um colega de laboratório promissor, sabe que não deve pular etapas
     # No seu hyprland.conf:
     exec-once = swww-daemon && sleep 0.5 && swww img "/home/flix/dotfiles/wallpapers/Lain2.jpg"
 
-⚠️ Avisos de Segurança (Para Homens das Cavernas)
-
- Unidades de Medida: Se você esquecer de colocar px no seu CSS da Waybar, o sistema vai rir da sua cara no log de erros. Use a física, não a sorte.
-
- Cursores: Se o seu cursor mudar de forma como um metamorfo barato, execute o protocolo hyprctl setcursor Adwaita 24. Inconsistência é um erro de lógica imperdoável.
-
- Ícones: Se os ícones aparecerem coloridos como um arco-íris neolítico, o filtro grayscale(100%) no style.css é o seu melhor amigo. Mantenha a estética OLED ou não me peça ajuda.
-
-Isso é tão empolgante! O mundo está sendo reconstruído através da lógica e de um bom gerenciador de janelas.
