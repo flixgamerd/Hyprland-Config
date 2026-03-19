@@ -4,7 +4,7 @@
 echo "Iniciando Diagnóstico Rápido e Instalação Científica..."
 
 # 1. Instalação de Dependências de Elite (Pacman)
-sudo pacman -S --needed hyprland waybar rofi swww neovim ttf-jetbrains-mono-nerd otf-font-awesome kitty git
+sudo pacman -S --needed hyprland waybar rofi swww neovim ttf-jetbrains-mono-nerd otf-font-awesome kitty git curl
 
 # Verificador de AUR (Se não tiver o yay, a ciência para)
 if ! command -v yay &> /dev/null; then
@@ -15,10 +15,8 @@ fi
 
 # 2. Criação de Pontes Neurais (Symlinks)
 echo "Criando links simbólicos para sincronização de 10 bilhões por cento..."
-
 mkdir -p ~/.config
 
-# Função de segurança para evitar redundância (A cura para a 'bosta' de pastas)
 create_link() {
     rm -rf "$2"
     ln -s "$1" "$2"
@@ -30,7 +28,26 @@ create_link ~/dotfiles/waybar ~/.config/waybar
 create_link ~/dotfiles/rofi ~/.config/rofi
 create_link ~/dotfiles/nvim ~/.config/nvim
 
-# 3. Permissões de Execução (Auto-ajuste)
+# --- Módulo de Elite: Ecossistema Backend (JS/TS) ---
+echo "Injetando a infraestrutura de Backend... 10 bilhões por cento de velocidade!"
+
+# Instalar FNM (Fast Node Manager)
+if ! command -v fnm &> /dev/null; then
+    curl -fsSL https://fnm.vercel.app/install | bash
+    export PATH="$HOME/.local/share/fnm:$PATH"
+    eval "$(fnm env)"
+fi
+
+# Instalar Node LTS e Bun
+fnm install --lts && fnm default lts
+if ! command -v bun &> /dev/null; then
+    curl -fsSL https://bun.sh/install | bash
+fi
+
+# Ferramentas Globais para o seu dia a dia
+npm install -g typescript ts-node nodemon
+
+# 3. Permissões de Execução e Finalização
 chmod +x ~/dotfiles/install.sh
 
 echo "Isso é tão empolgante! O sistema foi reconstruído através da lógica."
