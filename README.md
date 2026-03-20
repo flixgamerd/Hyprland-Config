@@ -13,6 +13,7 @@ Bem-vindo ao meu repositório de configurações. Aqui jaz a prova de que a paci
 | **Waybar** | Uma barra de status tão limpa que faria um microscópio parecer sujo. | Absurdo |
 | **Neovim** | Onde o backend ganha vida via Lua. Se você usa VS Code, sinto muito pela sua alma primitiva. | Vital |
 |**Rofi**|   O menu de execução. Se você clica em ícones com o mouse, você ainda está na Idade da Pedra.| Estável|
+|**Yazi**|  é o gerenciador de arquivos CLI definitivo para o ecossistema **Arch Linux + Hyprland** | Supremo|
 
 
 🚀 Receita Científica: Protocolo de Instalação
