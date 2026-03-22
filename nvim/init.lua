@@ -14,9 +14,3 @@ vim.keymap.set('t', '<Esc>', [[<C-\><C-n>:q!<CR>]], { desc = "Sair e fechar term
 
 vim.opt.splitbelow = true -- Abrir novos splits horizontais em baixo
 vim.opt.splitright = true -- Abrir novos splits verticais à direita
-
-vim.filetype.add({
-  extension = {
-    kv = "kivy",
-  },
-})
