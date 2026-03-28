@@ -1,203 +1,108 @@
-*{
-
-font-family: JetBrainsMonoNerdFontPropo, Noto Sans CJK JP;
-
-font-size: 18px;
-
-border: none;
-
+* {
+  font-family: JetBrainsMonoNerdFontPropo, Noto Sans CJK JP;
+  font-size: 18px;
+  border: none;
 }
 
-  @define-color chill-bg     rgba(15, 15, 15, 0.4); /* Escuro da camisa/boné */
-@define-color chill-teal   #4688A1;               /* Azul do fundo/céu */
-@define-color chill-cream  #D9D3D0;               /* Creme sofisticado do cabelo */
-@define-color chill-border rgba(70, 136, 161, 0.4);
+@define-color green-bg     rgba(10, 26, 14, 0.40);  /* Fundo profundo da imagem     */
+@define-color green-active #3DCC55;                  /* Verde vivo — brilho central  */
+@define-color green-glow   #A8F0BC;                  /* Claridade solar do pico      */
+@define-color green-border rgba(45, 140, 62, 0.55);  /* Verde floresta — bordas      */
+@define-color green-dim    #1A5C23;                  /* Verde médio — inativo        */
+@define-color green-deep   #0F2E14;                  /* Verde escuro — sombra base   */
 
-/* --- Efeito de Agrupamento e Vidro Fosco --- */
-
+/* --- Módulos agrupados com vidro fosco --- */
 .modules-left,
-
 .modules-center,
-
 .modules-right {
-
-background-color: @chill-bg;
-
-border: 2px solid @chill-border;
-
-border-radius: 8px;
-
-padding: 2px 10px;
-
-margin: 6px 4px;
-
-transition: background-color 0.3s ease;
-
+  background-color: @green-bg;
+  border: 2px solid @green-border;
+  border-radius: 8px;
+  padding: 2px 10px;
+  margin: 6px 4px;
+  transition: background-color 0.3s ease;
 }
-/* --- Reset de Cor para Ícones (Volta ao Cinza/Branco) --- */
-  
 
 /* --- Waybar window --- */
-
 window#waybar {
-
-background: transparent;
-
-color: @chill-cream;
-
-box-shadow: none;
-
+  background: transparent;
+  color: @green-glow;
+  box-shadow: none;
 }
-
-  
 
 window#waybar > box {
-
-background: none;
-
+  background: none;
 }
-
-  
 
 /* --- Botões gerais --- */
-
 button {
-
-background: none;
-
-box-shadow: none;
-
-border: none;
-
-transition: color 0.15s ease-out,
-text-shadow 0.15s ease-out,
-box-shadow 0.15s ease-out;
-
+  background: none;
+  box-shadow: none;
+  border: none;
+  transition: color 0.15s ease-out,
+              text-shadow 0.15s ease-out,
+              box-shadow 0.15s ease-out;
 }
-
-  
 
 /* --- Workspaces --- */
-
 #workspaces {
-
-background: transparent; /* Garante que o fundo venha do container */
-
+  background: transparent;
 }
-
-  
 
 #workspaces button {
-
-padding: 0 6px;
-
-margin: 0 2px;
-
-color: @chill-teal;
-
-background: none;
-
+  padding: 0 6px;
+  margin: 0 2px;
+  color: @green-dim;
+  background: none;
 }
-
-  
 
 #workspaces button.active {
-
-color: @chill-cream;
-
-font-weight: bold;
-
-text-shadow: 0 0 4px #E1DFE1,
-
-0 0 8px @hill-cream;
-
-box-shadow: inset 0 -2px #6D6D71,
-
-0 0 6px #373A3E;
-
-animation: frost-pulse 0.18s ease-out;
-
+  color: @green-active;
+  font-weight: bold;
+  text-shadow: 0 0 4px @green-active,
+               0 0 8px @green-glow;
+  box-shadow: inset 0 -2px @green-active,
+              0 0 6px @green-deep;
+  animation: frost-pulse 0.18s ease-out;
 }
-
-  
 
 #workspaces button.urgent {
-
-color: #222526;
-
-text-shadow: 0 0 6px #E1DFE1 ;
-
+  color: @green-deep;
+  text-shadow: 0 0 6px @green-active;
 }
-
-  
 
 @keyframes frost-pulse {
-
-0% { color: @chill-cream; }
-
-50% { color: @chill-cream; }
-
-100% { color: @chill-teal; }
-
+  0%   { color: @green-glow;   }
+  50%  { color: @green-active; }
+  100% { color: @green-active; }
 }
-
-  
 
 /* --- Clock --- */
-
 #clock {
-
-padding: 0 14px;
-
-font-weight: 600;
-
-letter-spacing: 0.08em;
-
-color: @chill-cream;
-
-background: transparent;
-
+  padding: 0 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: @green-glow;
+  background: transparent;
 }
 
-  
-
-/* --- Restante dos seus módulos (ajustados para fundo transparente) --- */
-
+/* --- Módulos gerais --- */
 #battery, #network, #wireplumber, #tray, #custom-powermenu,
-
 #custom-spotify, #cpu, #memory, #custom-gpu, #custom-cpu-temp,
-
 #custom-notifications {
-
-background: transparent;
-
+  background: transparent;
 }
 
-  
-  
+#network            { padding: 2px 13px; color: @green-glow; }
+#network.disconnected { color: @green-dim; }
 
-#network { padding: 2px 13px; color:@chill-cream ; }
+#tray               { padding: 2px 10px; color: @green-glow; }
 
-#network.disconnected { color: #919191; }
+#custom-power       { padding: 2px 10px; color: @green-glow; }
+#custom-power:hover { color: @green-active; }
 
-  
+#custom-spotify       { padding: 2px 10px; color: @green-glow; transition: color 0.15s ease-out; }
+#custom-spotify:hover { color: @green-active; }
 
-#tray { padding: 2px 10px; color: @chill-cream; }
-
-  
-
-#custom-power { padding: 2px 10px; color: @chill-cream; }
-
-#custom-power:hover { color: @chill-cream; }
-
-  
-
-#custom-spotify { padding: 2px 10px; color: @chill-cream; transition: color 0.15s ease-out; }
-
-#custom-spotify:hover { color: @chill-cream; }
-
-  
-
-#cpu { padding: 2px 10px; color: @chill-cream; }
-
-#memory { padding: 2px 10px; color: @chill-cream; }
+#cpu    { padding: 2px 10px; color: @green-glow; }
+#memory { padding: 2px 10px; color: @green-glow; }
