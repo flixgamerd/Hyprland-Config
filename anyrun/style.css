@@ -1,12 +1,13 @@
 /* ══════════════════════════════════════════
    AnyRun — Tema Montanha
-   Paleta: Verde escuro / Neon forest
+   Paleta:  A Grande Onda de Kanagawa de Hokusai
    ══════════════════════════════════════════ */
-@define-color accent       #00C060;
-@define-color bg-color     #001A0E;
-@define-color fg-color     #AFFFCF;
-@define-color desc-color   #4D8C66;
-@define-color green-accent #00FF7F;
+
+@define-color accent       #B0B8C0;
+@define-color bg-color     #05050A;
+@define-color fg-color     #E8E8E8;
+@define-color desc-color   #5A5A5A;
+@define-color wave-accent  #C8CDD2;
 
 /* ── Janela principal ── */
 window {
@@ -18,9 +19,9 @@ box.main {
   padding: 10px;
   margin: 12px;
   border-radius: 14px;
-  border: 1px solid @accent;
-  background-color: rgba(0, 26, 14, 0.92);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(176, 184, 192, 0.45);
+  background-color: rgba(5, 5, 10, 0.93);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.85);
 }
 
 /* ── Campo de pesquisa ── */
@@ -29,8 +30,8 @@ text {
   padding: 8px 14px;
   border-radius: 10px;
   color: @fg-color;
-  background-color: rgba(0, 192, 96, 0.08);
-  border: 1px solid rgba(0, 192, 96, 0.25);
+  background-color: rgba(176, 184, 192, 0.06);
+  border: 1px solid rgba(176, 184, 192, 0.20);
 }
 
 /* ── Lista de resultados ── */
@@ -54,8 +55,8 @@ box.plugin.info {
   border-radius: 8px;
 }
 .match:selected {
-  border-left: 3px solid @green-accent;
-  background: rgba(0, 192, 96, 0.15);
+  border-left: 3px solid @wave-accent;
+  background: rgba(176, 184, 192, 0.10);
   animation: fade 0.1s linear;
 }
 @keyframes fade {

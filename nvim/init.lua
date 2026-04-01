@@ -14,3 +14,26 @@ vim.keymap.set('t', '<Esc>', [[<C-\><C-n>:q!<CR>]], { desc = "Sair e fechar term
 
 vim.opt.splitbelow = true -- Abrir novos splits horizontais em baixo
 vim.opt.splitright = true -- Abrir novos splits verticais à direita
+
+
+
+-- Abre/Fecha o banco de dados com <Leader>db
+vim.keymap.set('n', '<leader>db', ':DBUIToggle<CR>', { noremap = true, silent = true })
+
+-- Executa a linha atual no banco de dados com <Leader>S
+vim.keymap.set('n', '<leader>S', '<Plug>(DBUI_ExecuteQuery)', { noremap = false })
+
+
+
+
+-- Força a transparência da coluna lateral e dos números
+vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none" })
+
+-- Se o Kanagawa ainda estiver a lutar, este comando limpa o fundo de vez
+vim.cmd([[
+  highlight SignColumn guibg=NONE
+  highlight LineNr guibg=NONE
+  highlight CursorLineNr guibg=NONE
+]])

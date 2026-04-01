@@ -18,6 +18,7 @@ ts.setup({
 local parsers = {
   "python", "javascript", 
     "typescript","html", "css",
+      "sql",
   
 }
 
