@@ -83,7 +83,7 @@ button {
 }
 
 /* ── Módulos da direita ── */
-#battery,
+
 #network,
 #wireplumber,
 #tray,
@@ -97,6 +97,7 @@ button {
 #custom-notifications {
   background: transparent;
   padding: 2px 10px;
+   margin-left: 10px;
   color: @wave-glow;
 }
 #network.disconnected {
