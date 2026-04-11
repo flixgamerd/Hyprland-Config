@@ -1,29 +1,31 @@
 # 🧪 The Cyber-Scientific Sanctuary (Arch/Hyprland Dotfiles)
-> "A ciência não é mágica, Senhor. É apenas o que acontece quando você para de usar o mouse como um homem das cavernas."
 
-Bem-vindo ao meu repositório de configurações. Aqui jaz a prova de que a paciência humana é finita, mas a capacidade de customizar o **Arch Linux** é infinita. Este não é apenas um conjunto de arquivos `.conf`; é a receita científica para a eficiência de elite.
+> "Science is not magic, sir. It's simply what happens when you stop using the mouse like a caveman."
 
-## 🛠️ Componentes de Laboratório (Diagnóstico Rápido)
+Welcome to my configuration repository. Herein lies proof that human patience is finite, but the capacity to customise Arch Linux is infinite. This is not merely a collection of `.conf` files — it is the scientific blueprint for elite-level efficiency.
 
-| Módulo | Descrição | Status de Empolgação |
+## 🛠️ Lab Components — Quick Diagnostics
+
+| Module | Description | Excitement Level |
 | :--- | :--- | :--- |
-| **Hyprland** | Onde a física das janelas acontece. Sem lag, apenas lógica pura. | 10.000.000.000% |
-| **Waybar** | Uma barra de status tão limpa que faria um microscópio parecer sujo. | Absurdo |
-| **Neovim** | Onde o backend ganha vida via Lua. Se você usa VS Code, sinto muito pela sua alma primitiva. | Vital |
-| **Anyrun** | O launcher de elite. Extensível, rápido e construído para quem não tem tempo para interfaces primitivas. | Superior |
-| **Yazi** | O gerenciador de arquivos CLI definitivo para o ecossistema **Arch Linux + Hyprland**. | Supremo |
+| **Hyprland** | Where window physics happen. No lag — pure logic. | 10,000,000,000% |
+| **Waybar** | A status bar so clean it would make a microscope feel inadequate. | Absurd |
+| **Neovim** | Where backend development comes alive through Lua. If you use VS Code, I grieve for your primitive soul. | Vital |
+| **AnyRun** | The elite launcher. Extensible, fast, and built for those who have no patience for primitive interfaces. | Superior |
+| **Yazi** | The definitive CLI file manager for the Arch Linux + Hyprland ecosystem. | Supreme |
 
-## 🚀 Receita Científica: Protocolo de Instalação
+## 🚀 Scientific Protocol — Installation
 
-Se você é um colega de laboratório promissor, sabe que não deve pular etapas. Siga o processo lógico, um passo de cada vez:
+If you are a promising lab colleague, you already know not to skip steps. Follow the logical process — one step at a time.
 
-**1. Clone esta anomalia:**
+**1. Clone this anomaly:**
 ```bash
 git clone https://github.com/flixgamerd/Hyprland-Config.git ~/dotfiles
 ```
 
-**2. A Ponte de Elite (Symlinks):**
-Não seja um homem das cavernas criando pastas redundantes. Os comandos abaixo criam as conexões neurais corretas:
+**2. Elite bridging (symlinks):**
+
+Do not create redundant folders like a caveman. The commands below establish the correct neural connections:
 ```bash
 ln -s ~/dotfiles/waybar   ~/.config/waybar
 ln -s ~/dotfiles/anyrun   ~/.config/anyrun
@@ -32,9 +34,10 @@ ln -s ~/dotfiles/hypr     ~/.config/hypr
 ln -s ~/dotfiles/yazi     ~/.config/yazi
 ```
 
-**3. O Despertar da Lain:**
-Garanta que o caminho do seu wallpaper não seja uma "variável fantasma". O `swww` precisa de endereços absolutos para não entrar em colapso existencial:
+**3. The awakening:**
+
+Ensure your wallpaper path is not a ghost variable. `swww` requires absolute paths to avoid an existential crisis:
 ```bash
-# No seu hyprland.conf:
+# In your hyprland.conf:
 exec-once = swww-daemon && sleep 0.5 && swww img "/home/flix/dotfiles/wallpapers/Lain2.jpg"
 ```
