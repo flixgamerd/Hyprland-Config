@@ -1,45 +1,83 @@
 #!/bin/bash
-# Protocolo Jarvis-sen: Script de Reconstrução de Mundo (Versão de Elite)
+# Protocolo Flix-Linux: Script de Reconstrução de Mundo (Versão de Elite)
 # Alvo: Arch Linux | Foco: Hyprland, Waybar & Backend (JS/TS)
-echo "Iniciando Diagnóstico Rápido e Instalação Científica..."
 
-# 1. Instalação de Dependências de Elite (Pacman)
-echo "Injetando pacotes de sistema e ferramentas essenciais..."
+set -e
+
+echo "Initiating Rapid Diagnostics and Scientific Installation..."
+
+# ============================================================
+# 1. SYSTEM DEPENDENCIES (PACMAN)
+# ============================================================
+echo "Injecting system packages and essential tools..."
 sudo pacman -S --needed \
     hyprland waybar swww kitty git curl \
     neovim ttf-jetbrains-mono-nerd otf-font-awesome \
-    yazi udisks2 udiskie p7zip
+    yazi udisks2 udiskie p7zip \
+    usbutils libmtp gvfs gvfs-mtp gvfs-gphoto2 \
+    libgphoto2 mtpfs \
+    file-roller unzip unrar
 
-# Verificador de AUR (Se não tiver o yay, a ciência para)
+# ============================================================
+# 2. AUR HELPER (YAY)
+# ============================================================
 if ! command -v yay &> /dev/null; then
-    echo "Yay não detectado. Clonando o assistente de AUR..."
+    echo "Yay not detected. Cloning AUR assistant..."
     git clone https://aur.archlinux.org/yay.git /tmp/yay
     cd /tmp/yay && makepkg -si --noconfirm && cd -
 fi
 
-# Instalação do anyrun via AUR
-echo "Injetando anyrun via AUR... 10 bilhões por cento de velocidade!"
-yay -S --needed anyrun-git
+# ============================================================
+# 3. AUR PACKAGES
+# ============================================================
+echo "Injecting AUR packages..."
+yay -S --needed \
+    anyrun-git \
+    jmtpfs \
+    android-udev
 
-# 2. Criação de Pontes Neurais (Symlinks)
-echo "Criando links simbólicos para sincronização de 10 bilhões por cento..."
+# ============================================================
+# 4. NEURAL BRIDGES (SYMLINKS)
+# ============================================================
+echo "Creating symbolic links..."
 mkdir -p ~/.config
+
 create_link() {
     rm -rf "$2"
     ln -s "$1" "$2"
-    echo "Ponte criada: $2 -> $1"
+    echo "Bridge created: $2 -> $1"
 }
 
-# Configurações de Interface (Hyprland + Waybar)
 create_link ~/dotfiles/hypr     ~/.config/hypr
 create_link ~/dotfiles/waybar   ~/.config/waybar
-create_link ~/dotfiles/anyrun   ~/.config/anyrun   # <-- substituído
+create_link ~/dotfiles/anyrun   ~/.config/anyrun
 create_link ~/dotfiles/nvim     ~/.config/nvim
 create_link ~/dotfiles/yazi     ~/.config/yazi
 
-# --- Módulo de Elite: Ecossistema Backend (JS/TS) ---
-echo "Injetando a infraestrutura de Backend... 10 bilhões por cento de velocidade!"
+# ============================================================
+# 5. DEVICE DETECTION & MOUNTING STACK
+# ============================================================
+echo "Configuring automatic mounting stack..."
 
+# Enable udisks2 as systemd service
+sudo systemctl enable --now udisks2.service
+
+# Inject udiskie autostart into hyprland.conf (idempotent)
+HYPR_CONF=~/dotfiles/hypr/hyprland.conf
+grep -qxF 'exec-once = udiskie --tray &' "$HYPR_CONF" \
+    || echo 'exec-once = udiskie --tray &' >> "$HYPR_CONF"
+
+# Add user to storage group (required for mounting without sudo)
+sudo usermod -aG storage "$USER"
+
+echo "Device stack configured. Re-login to apply group changes."
+
+# ============================================================
+# 6. BACKEND ECOSYSTEM (JS/TS)
+# ============================================================
+echo "Injecting backend infrastructure..."
+
+# fnm (Node version manager)
 if ! command -v fnm &> /dev/null; then
     curl -fsSL https://fnm.vercel.app/install | bash
     export PATH="$HOME/.local/share/fnm:$PATH"
@@ -48,24 +86,39 @@ fi
 
 fnm install --lts && fnm default lts
 
+# bun
 if ! command -v bun &> /dev/null; then
     curl -fsSL https://bun.sh/install | bash
 fi
 
+# Global npm packages
 npm install -g typescript ts-node nodemon
 
-# --- Módulo de Estética: Cursor e Ícones ---
-echo "Configurando o cursor Adwaita... 10 bilhões por cento de polidez!"
+# ============================================================
+# 7. AESTHETICS — CURSOR & ICONS
+# ============================================================
+echo "Configuring Adwaita cursor..."
 sudo pacman -S --needed adwaita-cursors-legacy adwaita-icon-theme
+
 mkdir -p ~/.icons
 if [ ! -L ~/.icons/default ]; then
     ln -s /usr/share/icons/Adwaita ~/.icons/default
 fi
 
-# 3. Permissões de Execução e Finalização
+# ============================================================
+# 8. PERMISSIONS
+# ============================================================
 chmod +x ~/dotfiles/install.sh
+
+# ============================================================
+# DONE
+# ============================================================
 echo "------------------------------------------------------------"
-echo "Isso é tão empolgante! Waybar e Yazi integrados com sucesso."
-echo "Certifique-se de que 'exec-once = waybar' está no seu hyprland.conf."
-echo "E que o anyrun está configurado em ~/dotfiles/anyrun/."
+echo "Installation complete. All systems nominal."
+echo ""
+echo "Checklist:"
+echo "  - Ensure 'exec-once = waybar' is in your hyprland.conf"
+echo "  - Ensure 'exec-once = udiskie --tray &' is in your hyprland.conf"
+echo "  - Re-login to apply 'storage' group (USB/MTP mounting)"
+echo "  - AnyRun config expected at ~/dotfiles/anyrun/"
 echo "------------------------------------------------------------"
