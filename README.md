@@ -36,8 +36,8 @@ ln -s ~/dotfiles/yazi     ~/.config/yazi
 
 **3. The awakening:**
 
-Ensure your wallpaper path is not a ghost variable. `swww` requires absolute paths to avoid an existential crisis:
+Ensure your wallpaper path is not a ghost variable. `awww` requires absolute paths to avoid an existential crisis:
 ```bash
 # In your hyprland.conf:
-exec-once = swww-daemon && sleep 0.5 && swww img "/home/flix/dotfiles/wallpapers/Lain2.jpg"
+exec-once = awww-daemon && sleep 0.5 && awww img "/home/user/dotfiles/wallpapers/Wave.jpg"
 ```
