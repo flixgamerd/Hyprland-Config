@@ -44,22 +44,22 @@ exec-once = awww-daemon && sleep 0.5 && awww img "/home/user/dotfiles/wallpapers
 ### System Diagnostics & Architecture
 The foundation of any civilized setup. Your machine's heartbeat, rendered with scientific precision.
 
-![Arch Linux System Diagnostics — fastfetch reveals an Intel Celeron J4025 @ 799 MHz operating with 2.38 GiB RAM. Adequate for those who understand that elegance scales inversely with bloat.](./screenshots/01_fastfetch.png)
+![Arch Linux System Diagnostics — fastfetch reveals an Intel Celeron J4025 @ 799 MHz operating with 2.38 GiB RAM. Adequate for those who understand that elegance scales inversely with bloat.](./screenshots/20260413_230917.png)
 
 ### Editor Throne: Neovim
 Where the actual work happens. Lua configurations, zero compromises, and keyboard supremacy. VS Code users are not invited to this section.
 
-![Neovim LSP integration — alpha-nvim greets you with monochromatic refinement. No distractions. Only logic.](./screenshots/02_neovim.png)
+![Neovim LSP integration — alpha-nvim greets you with monochromatic refinement. No distractions. Only logic.](./screenshots/20260413_230936.png)
 
 ### Aesthetic Materialization: The Great Wave
 The wallpaper philosophy made manifest. Katsushika Hokusai meets Hyprland. Proof that scientific precision and visual poetry are not mutually exclusive.
 
-![The Great Wave off Kanagawa — inverted palette, rendered in near-black and ethereal white. Your desktop environment is now indistinguishable from a Ukiyo-e print.](./screenshots/03_great_wave.png)
+![The Great Wave off Kanagawa — inverted palette, rendered in near-black and ethereal white. Your desktop environment is now indistinguishable from a Ukiyo-e print.](./screenshots/20260413_231047.png)
 
 ### System Monitoring in Real-Time
 btop displaying CPU, memory, disk, and network metrics. The machine talks; you listen.
 
-![btop monitoring dashboard — Celeron J4025 at 23% load, 2.05 GiB RAM consumed, 74% disk utilization. The system whispers its vital signs.](./screenshots/04_btop.png)
+![btop monitoring dashboard — Celeron J4025 at 23% load, 2.05 GiB RAM consumed, 74% disk utilization. The system whispers its vital signs.](./screenshots/20260413_231057.png)
 
 ## 🎨 Theming Architecture
 
