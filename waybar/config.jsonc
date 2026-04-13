@@ -21,6 +21,7 @@
         "network",
         "cpu",
         "memory",
+	"disk",
         "temperature"
     ],
 
@@ -91,7 +92,7 @@
                "critical-threshold": 80,
        
         "format-icons": [""],
-        "format": " {temperatureC}°C {icon}"
+        "format": " {icon} {temperatureC}°C"
     },
 
     "network": {
@@ -100,6 +101,15 @@
     "format-disconnected": "󰤮",
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "tooltip-format": "{essid} - {signalStrength}%"
+},
+
+		"disk": {
+    "interval": 30,
+    "path": "/",
+    "format": "󱛟 {free}",
+    "format-alt": "󱛟 {percentage_free}% livre",
+    "on-click": "kitty --class btop_float -e df -h",
+    "tooltip-format": "{used} usados de {total} ({percentage_used}% cheio)"
 },
     "pulseaudio": {
               "format": "{icon}",
@@ -124,5 +134,6 @@
 		"tooltip": false
 
 		}
+
     
 }
