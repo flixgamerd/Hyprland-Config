@@ -104,10 +104,7 @@ dotfiles/
 Ensure these packages are installed:
 
 ```bash
-pacman -S hyprland waybar neovim yazi anyrun btop wl-clipboard swww awww
-
-# For Neovim development:
-pacman -S npm rust ripgrep fd
+pacman -S hyprland waybar neovim yazi anyrun btop wl-clipboard awww
 ```
 
 Optional but recommended:
@@ -135,4 +132,3 @@ This configuration is provided as-is. Modify it. Break it. Rebuild it better. Sc
 
 **Last updated:** April 2026  
 **Maintained by:** flixgamerd (Flix)  
-**Aesthetic Phase:** *The Great Wave* (Monochromatic Refinement)
