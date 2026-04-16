@@ -12,6 +12,7 @@ Welcome to my configuration repository. Herein lies proof that human patience is
 | **Neovim** | Where backend development comes alive through Lua. If you use VS Code, I grieve for your primitive soul. | Vital |
 | **AnyRun** | The elite launcher. Extensible, fast, and built for those who have no patience for primitive interfaces. | Superior |
 | **Yazi** | The definitive CLI file manager for the Arch Linux + Hyprland ecosystem. | Supreme |
+| **ZSH** | O shell definitivo. O Starship traz um prompt em Rust que detecta seu ambiente Backend (Node/TS) instantaneamente. | 10,000,000,000% | 
 
 ## 🚀 Scientific Protocol — Installation
 
@@ -113,6 +114,12 @@ pacman -S grimblast        # Wayland-native screenshots
 pacman -S wf-recorder      # Screen recording without compromising FPS
 pacman -S dunst            # Notification daemon (minimal)
 ```
+### 🐚 Terminal Ascension
+The primitive `bash` has been purged. The system now utilizes **Zsh** augmented by **Starship**.
+
+- **Prompt**: Starship (Rust-powered, ultra-fast).
+- **Plugins**: `zsh-autosuggestions` (because memory is for computers, not scientists) and `zsh-syntax-highlighting`.
+- **Logic**: Intelligent environment detection for Node.js/TypeScript projects.
 
 ## 🚦 Current Status
 
@@ -123,7 +130,7 @@ pacman -S dunst            # Notification daemon (minimal)
 | Neovim | 0.10+ | ✓ Optimized |
 | Waybar | Latest | ✓ Refined |
 | Yazi | Latest | ✓ Deployed |
-
+| ZSH  | Lastest | ✓ Rolling |
 ## 📝 License
 
 This configuration is provided as-is. Modify it. Break it. Rebuild it better. Science is iterative.
